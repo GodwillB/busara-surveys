@@ -63,6 +63,7 @@
     font-weight: lighter;
 }
 .auth-intro p{
+    margin-top: 10px;
     font-family: 'Nunito Sans', sans-serif;
 }
 .auth-form{
