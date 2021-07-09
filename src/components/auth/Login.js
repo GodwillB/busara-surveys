@@ -18,19 +18,20 @@ export default function Login() {
       const res = await fetch('https://fullstack-role.busara.io/api/v1/oauth/token/', {
         method: 'POST',
         headers: {
-          'Content-type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
         },
-        body: JSON.stringify({
-          grant_type: 'password&username',
+        body: new URLSearchParams({
+          grant_type: 'password',
+          client_id: 'zVs3J7FZupB3TLPskQOy1xHLwYTRkzUSf2rdTDCu',
+          client_secret: 'Zv19oWmm416sTyjWT5Sx2r1gRwjWrXU3P5dWledQpYjxEvavS58SPtz03M8wvsgajaVLhcimmJIUUYUDad06V6HQosmPoj3TPRNjg7bgniQlooIwyFWfz8KfkM5Tdh7R',
           username: email,
           password,
-          '-u': '12345:efghjkopdfghjkl',
         }),
       })
-      if (res.status === 201) {
-        // registration request created
+      if (res.status === 200) {
+        // login success
         toast.success('Login success', {
-          duration: 6000,
+          duration: 4000,
           position: 'top-center',
         })
         setLoading(false)
