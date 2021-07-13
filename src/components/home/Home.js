@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useAppContext } from '../../context/state'
 import BtnLoader from '../spinners/BtnLoader'
+import Header from './Header'
+import '../../styles/home.css'
 
 export default function Home() {
   const [loading, setLoading] = useState(false)
@@ -39,6 +41,7 @@ export default function Home() {
   }, [])
   return (
     <main>
+      <Header />
       <p>{userToken}</p>
       <h1>This is the main page, it should be protected</h1>
       <button
