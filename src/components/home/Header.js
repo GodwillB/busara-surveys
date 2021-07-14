@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import { useAppContext } from '../../context/state'
 import Busara from '../../img/lo.png'
 
@@ -25,7 +26,10 @@ function AccCard({ visible, user, close }) {
       <div className="close-overlay" onClick={close} />
       <div className="acc-card">
         <UserDetails user={user} />
-        <button className="sign-out" type="button" onClick={actions.removeToken}>Sign Out</button>
+        <button className="sign-out" type="button" onClick={actions.removeToken}>
+          <h4>Sign Out</h4>
+          <ExitToAppIcon style={{ fontSize: '30px', color: '#fff' }} />
+        </button>
       </div>
     </>
   )
