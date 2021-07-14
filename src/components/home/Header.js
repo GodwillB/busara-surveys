@@ -47,7 +47,7 @@ export default function Header() {
   const getCurrentUserReq = async () => {
     setLoading(true)
     try {
-      const res = await fetch('http://fullstack-role.busara.io/api/v1/users/current-user', {
+      const res = await fetch('https://fullstack-role.busara.io/api/v1/users/current-user', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
