@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import { useAppContext } from '../../context/state'
 import Busara from '../../img/lo.png'
-import BtnLoader from '../spinners/BtnLoader'
 
 function UserDetails({ user }) {
   if (!user) {
@@ -33,6 +32,7 @@ function AccCard({ visible, user, close }) {
 }
 
 export default function Header() {
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState(null)
   const [cardOpen, toggleCard] = useState(false)
@@ -73,7 +73,6 @@ export default function Header() {
       </div>
       <div className="acc">
         <div className="initials" onClick={() => toggleCard(!cardOpen)}>
-          {loading ? <BtnLoader color="#fff" /> : null}
           {user ? <span>{`${user.first_name.charAt(0)}${user.last_name.charAt(0)}`}</span> : null}
         </div>
         <AccCard visible={cardOpen} user={user} close={() => toggleCard(false)} />
