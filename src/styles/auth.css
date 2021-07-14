@@ -1,0 +1,109 @@
+.auth-page{
+    width: 100%;
+    min-height: 100vh;
+}
+.auth-header{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.auth-header .brand{
+    height: 50px;
+    width: 200px;
+}
+.auth-header .brand img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.auth-holder{
+    width: 95%;
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.auth-holder .auth-nav{
+    width: 100%;
+    display: flex;
+}
+.auth-nav a{
+    text-decoration: none;
+    color: inherit;
+}
+.auth-nav .nav-link{
+    flex: .5;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f7f5;
+    border: 1px solid #e0e0e0;
+}
+.auth-nav .nav-link h4{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+.auth-nav .nav-link:hover{
+    background-color: #fff;
+}
+.nav-link.nav-active{
+    background-color: #fff;
+    border: none;
+}
+.auth-intro{
+    width: 100%;
+}
+.auth-intro h3{
+    color: gray;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+.auth-intro p{
+    margin-top: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.auth-form{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+.auth-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.auth-input input{
+    width: 100%;
+    height: 45px;
+    padding-left: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #80808098;
+    border-radius: 5px;
+    outline: none;
+}
+.auth-input input:focus{
+    border: 2px solid #000080;
+}
+.auth-input label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+.auth-submit{
+    width: 100%;
+    height: 45px;
+    background-color: #000080;
+    cursor: pointer;
+}
+.auth-submit h5{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+}
