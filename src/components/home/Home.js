@@ -60,7 +60,7 @@ export default function Home() {
   const getQuestionsReq = async () => {
     setLoading(true)
     try {
-      const res = await fetch('http://fullstack-role.busara.io/api/v1/recruitment/forms/?node_type=Both', {
+      const res = await fetch('https://fullstack-role.busara.io/api/v1/recruitment/forms/?node_type=Both', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
