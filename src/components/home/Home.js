@@ -10,7 +10,6 @@ export default function Home() {
   const { state } = useAppContext()
   const { userToken } = state
 
-  const { actions } = useAppContext()
   const getQuestionsReq = async () => {
     setLoading(true)
     try {
@@ -42,15 +41,7 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <p>{userToken}</p>
-      <h1>This is the main page, it should be protected</h1>
-      <button
-        type="button"
-        onClick={actions.removeToken}
-      >
-        Logout
-      </button>
-      {loading ? <BtnLoader color="#fff" /> : null}
+      {loading ? <BtnLoader color="#000080" /> : null}
     </main>
   )
 }

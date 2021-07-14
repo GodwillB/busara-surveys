@@ -1,11 +1,41 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useEffect } from 'react'
 import { useAppContext } from '../../context/state'
 import Busara from '../../img/lo.png'
 import BtnLoader from '../spinners/BtnLoader'
 
+function UserDetails({ user }) {
+  if (!user) {
+    return null
+  }
+  return (
+    <div className="user-details">
+      <div className="user-details-name">{user.name}</div>
+      <div className="user-details-email">{user.email}</div>
+    </div>
+  )
+}
+
+function AccCard({ visible, user, close }) {
+  const { actions } = useAppContext()
+  if (!visible) {
+    return null
+  }
+  return (
+    <>
+      <div className="close-overlay" onClick={close} />
+      <div className="acc-card">
+        <UserDetails user={user} />
+        <button className="sign-out" type="button" onClick={actions.removeToken}>Sign Out</button>
+      </div>
+    </>
+  )
+}
+
 export default function Header() {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState(null)
+  const [cardOpen, toggleCard] = useState(false)
 
   const { state } = useAppContext()
   const { userToken } = state
@@ -41,9 +71,12 @@ export default function Header() {
       <div className="brand">
         <img src={Busara} alt="busara logo" />
       </div>
-      <div className="initials">
-        {loading ? <BtnLoader color="#fff" /> : null}
-        {user ? <span>{`${user.first_name.charAt(0)}${user.last_name.charAt(0)}`}</span> : null}
+      <div className="acc">
+        <div className="initials" onClick={() => toggleCard(!cardOpen)}>
+          {loading ? <BtnLoader color="#fff" /> : null}
+          {user ? <span>{`${user.first_name.charAt(0)}${user.last_name.charAt(0)}`}</span> : null}
+        </div>
+        <AccCard visible={cardOpen} user={user} close={() => toggleCard(false)} />
       </div>
     </header>
   )
